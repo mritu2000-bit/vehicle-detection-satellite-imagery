@@ -2,11 +2,7 @@
 I've worked with object detection workflows on the user interface side — reviewing outputs, validating results, flagging false positives. I wanted to understand what's actually happening under the hood, so I built this pipeline from scratch.
 
 ## Problem Statement
-Manual analysis of high resolution satellite imagery is time-consuming 
-and impractical at scale. Automated vehicle detection enables rapid 
-identification of military assets, convoy monitoring, and border 
-surveillance without human intervention — critical for defence and 
-intelligence applications.
+Manual analysis of high-resolution satellite imagery is time-consuming and impractical at scale. Automated vehicle detection enables rapid identification and counting of vehicles across large areas — useful for traffic monitoring, parking analysis, and infrastructure planning.
 
 ## Approach
 I started with a classical approach to understand the fundamentals before moving to deep learning:
@@ -34,6 +30,8 @@ I started with a classical approach to understand the fundamentals before moving
 | F1 Score | 0.743 |
 
 ![Detection Result](final_result.png)
+## Why recall is 0.65 — not 0.85+
+The pipeline detects vehicles by isolating yellow and bright-toned objects in HSV space. This works well for vehicles that stand out visually but misses 14 of the 40 large vehicles because they are darker, camouflaged, or in shadow. The method is intentionally narrow — high precision was the priority over recall at this stage.
 
 ## Limitations
 - Color thresholding only detects yellow/bright vehicles
