@@ -1,4 +1,5 @@
 # Vehicle Detection in High Resolution Satellite Imagery
+I've worked with object detection workflows on the user interface side — reviewing outputs, validating results, flagging false positives. I wanted to understand what's actually happening under the hood, so I built this pipeline from scratch.
 
 ## Problem Statement
 Manual analysis of high resolution satellite imagery is time-consuming 
@@ -8,7 +9,7 @@ surveillance without human intervention — critical for defence and
 intelligence applications.
 
 ## Approach
-Classical computer vision pipeline:
+I started with a classical approach to understand the fundamentals before moving to deep learning:
 1. Convert image to HSV color space
 2. Apply yellow color thresholding to isolate vehicles
 3. Morphological operations (closing + opening) to remove noise
@@ -16,7 +17,7 @@ Classical computer vision pipeline:
 5. Size filtering to remove false detections
 6. IoU-based matching against ground truth for evaluation
 
-## Dataset]
+## Dataset
 - DOTA-v1.0 (Detection in Optical Remote Sensing Images)
 - Image resolution: 0.5m - 1m GSD (matching KaleidEO OPT 50 payload)
 - Image: P0003
